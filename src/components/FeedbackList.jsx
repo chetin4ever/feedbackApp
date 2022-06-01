@@ -1,9 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion"
-import React from "react"
 import FeedbackItem from "./FeedbackItem"
-import PropTypes from "prop-types"
+import { useContext } from "react"
 
-function FeedbackList({ feedback, handleDelete }) {
+import FeedbackContext from "../context/FeedbackContext"
+
+function FeedbackList({ handleDelete }) {
+  const { feedback } = useContext(FeedbackContext)
   console.log(feedback)
   return (
     <div className='feedback-list'>
@@ -32,9 +34,6 @@ function FeedbackList({ feedback, handleDelete }) {
   //     ))}
   //   </div>
   // )
-}
-FeedbackList.prototypes = {
-  feedback: PropTypes.object.isRequired,
 }
 
 export default FeedbackList
