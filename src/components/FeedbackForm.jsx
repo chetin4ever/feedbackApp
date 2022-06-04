@@ -39,7 +39,7 @@ function FeedbackForm() {
         text,
         rating,
       }
-      if ((feedbackedit.edit = true)) {
+      if (feedbackedit.edit === true) {
         updateFeedback(feedbackedit.item.id, newFeedback)
       } else {
         addFeedback(newFeedback)
